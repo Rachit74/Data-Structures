@@ -3,24 +3,16 @@
 
 std::vector<int> zerosToEnd(std::vector<int> a) {
     
-    // find elements who are zero and remove them, increasing the zeros_count
-
-    int zeros_count = 0;
+    int pos = 0;
 
     for (int i = 0; i < a.size(); i ++) {
-        if (a[i] == 0) {
-            a[i] = a[i + 1];
-            a.erase(a.begin() + i);
-            zeros_count++;
-        } else {
-            continue;
+        if (a[i] != 0) {
+            a[pos++] = a[i];
         }
     }
 
-    // append the zeros at the end
-
-    for (int i = 0; i < zeros_count; i++) {
-        a.push_back(0);
+    while (pos < a.size()) {
+        a[pos++] = 0;
     }
 
     return a;
