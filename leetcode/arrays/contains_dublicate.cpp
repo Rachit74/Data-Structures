@@ -2,6 +2,10 @@
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 */
 
+/*
+we use a set which does not allow dublicate element and any dublicates will be removed
+*/
+
 #include <iostream>
 #include <vector>
 #include <set>
